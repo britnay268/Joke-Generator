@@ -17,6 +17,7 @@ const init = () => {
     <div id="punchline"></div>
   `;
 
+  let jokeRespone;
   document
     .querySelector('#btn-container')
     .addEventListener('click', (e) => {
@@ -25,12 +26,11 @@ const init = () => {
         renderToDOM('#btn-container', '<button class="btn btn-danger" id="punchline-btn">Get Punchline</button>');
         getRequest().then((response) => {
           console.warn(response);
+          jokeRespone = response;
           showJoke(response, e);
         });
       } else if (e.target.id.includes('punchline-btn')) {
-        getRequest().then((response) => {
-          showJoke(response, e);
-        });
+        showJoke(jokeRespone, e);
         renderToDOM('#btn-container', '<button class="btn btn-danger" id="joke-btn">Get Another Joke!</button>');
       }
     });
