@@ -8,13 +8,12 @@ import renderToDOM from '../utils/renderToDom';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
-    <h1>HELLO! Welcome to the Joke Generator!</h1><br />
+    <h1><span>&#127147;</span> Joke Generator <span>&#127147;</span></h1><br />
     <div id="jokeContainer"></div>
+    <div id="punchline"></div>
     <div id="btn-container">
       <button class="btn btn-danger" id="joke-btn">Get a Joke</button><br />
     </div>
-    <hr />
-    <div id="punchline"></div>
   `;
 
   let jokeRespone;
